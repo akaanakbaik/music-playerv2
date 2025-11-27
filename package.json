@@ -1,0 +1,19 @@
+{
+  "name": "music-player-web",
+  "version": "1.0.0",
+  "description": "Simple Web Music Player",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve",
+    "build": "echo 'Static site, no build needed' && mkdir -p public && cp index.html public/"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["music", "player", "web"],
+  "author": "Aka",
+  "license": "MIT"
+}
