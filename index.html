@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Music Player Modern - Search, Play & Download">
+    <title>Music Player</title>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Welcome Screen -->
+    <div id="welcomePanel" class="welcome-panel">
+        <div class="welcome-box">
+            <div class="logo">MusicPlayer</div>
+            <p style="color: #b3b3b3; margin-bottom: 20px;">Stream lagu favoritmu tanpa batas, tanpa iklan, gratis.</p>
+            <button id="welcomeCloseBtn" class="welcome-btn">Mulai Mendengarkan</button>
+        </div>
+    </div>
+
+    <!-- Notification Area -->
+    <div id="notificationContainer"></div>
+
+    <!-- Loading Overlay -->
+    <div class="loading">
+        <i class="fas fa-spinner fa-spin fa-2x"></i>
+        <p>Memuat...</p>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <a href="/" class="logo">MusicPlayer</a>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Cari lagu atau artis...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </header>
+
+        <!-- Search Results -->
+        <div id="resultsSection" style="display: none;">
+            <h2 class="section-title"><i class="fas fa-search"></i> Hasil Pencarian</h2>
+            <div id="results" class="grid-container"></div>
+            <div class="no-results" style="display: none; text-align: center; padding: 40px; color: #666;">
+                <i class="fas fa-music fa-3x" style="margin-bottom: 10px;"></i>
+                <p>Tidak ada lagu ditemukan.</p>
+            </div>
+        </div>
+
+        <!-- Recommendations -->
+        <div id="recommendedSection">
+            <h2 class="section-title"><i class="fas fa-fire"></i> Rekomendasi</h2>
+            <div id="recommendedList" class="grid-container"></div>
+        </div>
+
+        <!-- History -->
+        <div id="historySection" style="display: none;">
+            <h2 class="section-title"><i class="fas fa-history"></i> Baru Diputar</h2>
+            <div id="historyList"></div>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="audioPlayer" preload="none"></audio>
+
+    <!-- Mini Player -->
+    <div id="playerMini" class="player-minimized hidden">
+        <div class="mini-info">
+            <img src="./css/image.png" class="song-thumbnail-img" alt="thumb">
+            <div class="mini-text">
+                <span class="song-title-text">Judul Lagu</span>
+                <small class="song-artist-text">Artis</small>
+            </div>
+        </div>
+        <div class="mini-controls">
+            <button id="miniPlayBtn" class="nav-btn"><i class="fas fa-play"></i></button>
+        </div>
+    </div>
+
+    <!-- Full Player -->
+    <div id="playerFull" class="player-full">
+        <div class="player-nav">
+            <button id="minimizeBtn" class="nav-btn"><i class="fas fa-chevron-down"></i></button>
+            <span>Now Playing</span>
+            <button id="downloadBtnLarge" class="nav-btn"><i class="fas fa-download"></i></button>
+        </div>
+
+        <div class="player-art">
+            <img src="./css/image.png" class="song-thumbnail-img" alt="Album Art">
+        </div>
+
+        <div class="track-info">
+            <div class="scrolling-wrapper">
+                <h2 class="song-title-text">Judul Lagu</h2>
+            </div>
+            <p class="song-artist-text">Nama Artis</p>
+        </div>
+
+        <div class="progress-area">
+            <div id="progressBarLarge" class="progress-bar">
+                <div id="progressLarge" class="progress-fill"></div>
+            </div>
+            <div class="time-labels">
+                <span id="currentTimeLarge">0:00</span>
+                <span id="totalTimeLarge">0:00</span>
+            </div>
+        </div>
+
+        <div class="controls-main">
+            <button id="prevBtnLarge" class="ctrl-btn"><i class="fas fa-step-backward"></i></button>
+            <button id="playBtnLarge" class="play-large"><i class="fas fa-play"></i></button>
+            <button id="nextBtnLarge" class="ctrl-btn"><i class="fas fa-step-forward"></i></button>
+        </div>
+
+        <div class="volume-wrapper">
+            <i class="fas fa-volume-down"></i>
+            <input type="range" id="volumeSlider" min="0" max="100" value="100">
+            <i class="fas fa-volume-up"></i>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/footer.js"></script>
+</body>
+</html>
+
+                  
