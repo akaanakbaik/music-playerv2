@@ -1,19 +1,27 @@
 {
   "name": "music-player-web",
-  "version": "1.0.0",
-  "description": "Simple Web Music Player",
+  "version": "2.0.0",
+  "description": "Modern Web Music Player with YouTube Integration",
   "main": "index.html",
   "scripts": {
     "start": "serve",
-    "build": "echo 'Static site, no build needed' && mkdir -p public && cp index.html public/"
+    "build": "mkdir -p public && cp -r index.html css js media public/ 2>/dev/null || :"
   },
   "dependencies": {
-    "serve": "^14.2.0"
+    "serve": "^14.2.1"
   },
   "engines": {
     "node": ">=18.0.0"
   },
-  "keywords": ["music", "player", "web"],
+  "keywords": [
+    "music",
+    "player",
+    "youtube",
+    "mp3",
+    "stream"
+  ],
   "author": "Aka",
   "license": "MIT"
 }
+
+
